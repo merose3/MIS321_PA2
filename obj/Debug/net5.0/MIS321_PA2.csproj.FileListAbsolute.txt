@@ -1,0 +1,15 @@
+/Users/maryjane/Desktop/Source/MIS321/MIS321_PA2/bin/Debug/net5.0/MIS321_PA2.deps.json
+/Users/maryjane/Desktop/Source/MIS321/MIS321_PA2/bin/Debug/net5.0/MIS321_PA2.runtimeconfig.json
+/Users/maryjane/Desktop/Source/MIS321/MIS321_PA2/bin/Debug/net5.0/MIS321_PA2.runtimeconfig.dev.json
+/Users/maryjane/Desktop/Source/MIS321/MIS321_PA2/bin/Debug/net5.0/MIS321_PA2.dll
+/Users/maryjane/Desktop/Source/MIS321/MIS321_PA2/bin/Debug/net5.0/ref/MIS321_PA2.dll
+/Users/maryjane/Desktop/Source/MIS321/MIS321_PA2/bin/Debug/net5.0/MIS321_PA2.pdb
+/Users/maryjane/Desktop/Source/MIS321/MIS321_PA2/obj/Debug/net5.0/MIS321_PA2.csproj.AssemblyReference.cache
+/Users/maryjane/Desktop/Source/MIS321/MIS321_PA2/obj/Debug/net5.0/MIS321_PA2.GeneratedMSBuildEditorConfig.editorconfig
+/Users/maryjane/Desktop/Source/MIS321/MIS321_PA2/obj/Debug/net5.0/MIS321_PA2.AssemblyInfoInputs.cache
+/Users/maryjane/Desktop/Source/MIS321/MIS321_PA2/obj/Debug/net5.0/MIS321_PA2.AssemblyInfo.cs
+/Users/maryjane/Desktop/Source/MIS321/MIS321_PA2/obj/Debug/net5.0/MIS321_PA2.csproj.CoreCompileInputs.cache
+/Users/maryjane/Desktop/Source/MIS321/MIS321_PA2/obj/Debug/net5.0/MIS321_PA2.dll
+/Users/maryjane/Desktop/Source/MIS321/MIS321_PA2/obj/Debug/net5.0/ref/MIS321_PA2.dll
+/Users/maryjane/Desktop/Source/MIS321/MIS321_PA2/obj/Debug/net5.0/MIS321_PA2.pdb
+/Users/maryjane/Desktop/Source/MIS321/MIS321_PA2/obj/Debug/net5.0/MIS321_PA2.genruntimeconfig.cache
