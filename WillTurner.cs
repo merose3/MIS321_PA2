@@ -6,13 +6,16 @@ using System.Threading.Tasks;
 
 namespace MIS321_PA2
 {
-    public class WillTurner : Character
+    public class WillTurner : Character //this is where you do the bonuses
     {
-        public IAttackBehavior swordBehavior {get; set;}
-        Character willTurner = new Character();
-        public void SwordAttack()
+        public void Attack()
         {
-            
+            System.Console.WriteLine("Slash! *I am sword fighting you*");
+        }
+        public double WillBonus()
+        {
+            double willBonus = ((MaxPower - DefensivePower) * (0.2));
+            return willBonus;
         }
     }
 }

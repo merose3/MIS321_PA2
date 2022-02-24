@@ -7,8 +7,6 @@ namespace MIS321_PA2.Interfaces
 {
     public interface IAttackBehavior
     {
-        public void SwordAttack();
-        public void DistractAttack();
-        public void CannonAttack();
+        public void Attack();
     }
 }

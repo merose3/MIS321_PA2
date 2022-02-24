@@ -17,7 +17,7 @@ namespace MIS321_PA2
         public int DefensivePower {get; set;}
         public IAttackBehavior attackBehavior {get; set;}
         public IDefendBehavior defendBehavior {get;set;}
-        Character newCharacter = new Character();
+        //Character newCharacter = new Character();
         public Character()
         {
             this.UserName = UserName;
@@ -35,7 +35,7 @@ namespace MIS321_PA2
         public int GetMaxPower()
         {
             Random rand = new Random();
-            int maxPower = rand.Next(0, 100);
+            int maxPower = rand.Next(1, 101);
             return maxPower;
         }
         public int GetHealth() //should I return?
@@ -53,6 +53,7 @@ namespace MIS321_PA2
             Random rand = new Random();
             int maxDPower = rand.Next(0, maxPower);
         }
+
     }
     
 }

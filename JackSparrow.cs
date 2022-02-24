@@ -7,13 +7,16 @@ using System.Threading.Tasks;
 
 namespace MIS321_PA2
 {
-    public class JackSparrow : Character
+    public class JackSparrow : Character //this is where you do the bonuses
     {
-        public IAttackBehavior distractBehavior {get; set;}
-        Character jackSparrow = new Character();
-        public void DistractAttack()
+        public void Attack()
         {
-
+            System.Console.WriteLine("Look at the bird over there! *I am distracting you*");
+        }
+        public double JackBonus()
+        {
+            double jackBonus = ((MaxPower - DefensivePower) * (0.2));
+            return jackBonus;
         }
     }
 }
