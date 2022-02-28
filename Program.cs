@@ -153,13 +153,15 @@ namespace MIS321_PA2
                 if(whoFirst == 1)
                 {
                     System.Console.WriteLine($"{player1.UserName} attacks first");
-                    DamageDone(player1, player2);
+                    player1.attackBehavior.Attack();
+                    DamageDone(player2, player1);
                     player1.GetStats();
                     player2.GetStats();
                     System.Console.WriteLine("Please press enter once you are ready for the next round");
                     Console.ReadKey();
 
                     System.Console.WriteLine($"{player2.UserName} now attacks");
+                    player2.attackBehavior.Attack();
                     DamageDone(player2, player1); //soooooo this should switch it for me?
                     player1.GetStats();
                     player2.GetStats();
@@ -169,6 +171,7 @@ namespace MIS321_PA2
                 else
                 {
                     System.Console.WriteLine($"{player2.UserName} attacks first");
+                    player2.attackBehavior.Attack();
                     DamageDone(player2, player1);
                     player1.GetStats();
                     player2.GetStats();
@@ -176,12 +179,12 @@ namespace MIS321_PA2
                     Console.ReadKey();
 
                     System.Console.WriteLine($"{player1.UserName} now attacks");
+                    player1.attackBehavior.Attack();
                     DamageDone(player1, player2); //soooooo this should switch it for me?
                     player1.GetStats();
                     player2.GetStats();
                     System.Console.WriteLine("Please press enter once you are ready for the next round");
                     Console.ReadKey();
-                    Console.Clear();
                 }
             }
             if(player1.Health > 0)
@@ -199,7 +202,7 @@ namespace MIS321_PA2
         {
             if(attacker.CharacterName == "Jack Sparrow" && defender.CharacterName == "Will Turner")
             {
-                attacker.attackBehavior.Attack();
+                // attacker.attackBehavior.Attack();
                 if(attacker.AttackStrength < defender.DefensivePower)
                 {
                     double damageDelt = 1;
@@ -213,7 +216,7 @@ namespace MIS321_PA2
             }
             if(attacker.CharacterName == "Will Turner" && defender.CharacterName == "Davy Jones")
             {
-                attacker.attackBehavior.Attack();
+                // attacker.attackBehavior.Attack();
                 if(attacker.AttackStrength < defender.DefensivePower)
                 {
                     double damageDelt = 1;
@@ -227,7 +230,7 @@ namespace MIS321_PA2
             }
             if(attacker.CharacterName == "Davy Jones" && defender.CharacterName == "Jack Sparrow")
             {
-                attacker.attackBehavior.Attack();
+                // attacker.attackBehavior.Attack();
                 if(attacker.AttackStrength < defender.DefensivePower)
                 {
                     double damageDelt = 1;
@@ -241,7 +244,7 @@ namespace MIS321_PA2
             }
             else
             {
-                attacker.attackBehavior.Attack();
+                // attacker.attackBehavior.Attack();
                 if(attacker.AttackStrength < defender.DefensivePower)
                 {
                     double damageDelt = 1;
