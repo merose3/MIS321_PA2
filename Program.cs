@@ -14,7 +14,7 @@ namespace MIS321_PA2
             Character player1 = new Character();
             Character player2 = new Character();
             int userChoice = MenuOptions.Player1Option();
-                while(userChoice !=4) //player 1 picking their character 
+                while(userChoice != 4) //player 1 picking their character 
                 {
                     switch(userChoice)
                     {
@@ -34,9 +34,12 @@ namespace MIS321_PA2
                             userChoice = 4;
                             break;
                         default:
+                            userChoice = MenuOptions.Player1OptionWrong();
+                            // userChoice = 4;
                             break;
                     }
-                   userChoice = MenuOptions.Player1OptionWrong();
+                    
+                   
                 }
                 System.Console.WriteLine("You will now exit the system");
         }
@@ -56,14 +59,14 @@ namespace MIS321_PA2
             else if(userChoice == 2)
             {
                 player1.CharacterName = "Will Turner";
-                player1.attackBehavior = new DistrackAttack();
+                player1.attackBehavior = new SwordAttack();
                 player1 = new WillTurner(){UserName = playerName};
                 System.Console.WriteLine($"{playerName} chose {player1.CharacterName}");
             }
             else if(userChoice == 3)
             {
                 player1.CharacterName = "Davy Jones";
-                player1.attackBehavior = new DistrackAttack();
+                player1.attackBehavior = new CannonAttack();
                 player1 = new DavyJones(){UserName = playerName};
                 System.Console.WriteLine($"{playerName} chose {player1.CharacterName}");
             }
@@ -110,14 +113,14 @@ namespace MIS321_PA2
             else if(userChoice == 2)
             {
                 player2.CharacterName = "Will Turner";
-                player2.attackBehavior = new DistrackAttack();
+                player2.attackBehavior = new SwordAttack();
                 player2 = new WillTurner(){UserName = playerName};
                 System.Console.WriteLine($"{playerName} chose {player2.CharacterName}");
             }
             else if(userChoice == 3)
             {
                 player2.CharacterName = "Davy Jones";
-                player2.attackBehavior = new DistrackAttack();
+                player2.attackBehavior = new CannonAttack();
                 player2 = new DavyJones(){UserName = playerName};
                 System.Console.WriteLine($"{playerName} chose {player2.CharacterName}");
             }
