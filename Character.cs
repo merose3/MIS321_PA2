@@ -30,29 +30,45 @@ namespace MIS321_PA2
         public string GetUserName()
         {
             string userName = MenuOptions.GetUserName();
-            return userName;
+            UserName = userName;
+            return UserName;
+        }
+        public string GetCharacterName()
+        {
+            string characterName = " hi";
+            UserName = characterName;
+            return CharacterName;
         }
         public int GetMaxPower()
         {
             Random rand = new Random();
-            int maxPower = rand.Next(1, 101);
-            return maxPower;
+            MaxPower = rand.Next(1, 101);
+            return MaxPower;
         }
         public int GetHealth() //should I return?
         {
-            int health = 100;
-            return health;
+            Health = 100;
+            return Health;
         }
-        public void GetStrength(int maxPower)
+        public int GetStrength()
         {
             Random rand = new Random();
-            int maxStrength = rand.Next(0, maxPower);
+            AttackStrength = rand.Next(0, MaxPower);
+
+            return AttackStrength;
         }
-        public void GetDefensivePower(int maxPower)
+        public int GetDefensivePower()
         {
             Random rand = new Random();
-            int maxDPower = rand.Next(0, maxPower);
-        }
+            DefensivePower = rand.Next(0, MaxPower);
+
+            return DefensivePower;
+        }     
+        public void GetStats()
+        {
+            System.Console.WriteLine($"{UserName}/{CharacterName} Stats \nHealth: {Health} \nMax Power: {MaxPower}\nAttack Strength: {AttackStrength}\nDefensive Power: {DefensivePower}");
+        }  
+
 
     }
     
