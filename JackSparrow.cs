@@ -9,14 +9,10 @@ namespace MIS321_PA2
 {
     public class JackSparrow : Character //this is where you do the bonuses
     {
-        public void Attack()
+        public JackSparrow() : base()
         {
-            System.Console.WriteLine("Look at the bird over there! *I am distracting you*");
-        }
-        public double JackBonus()
-        {
-            double jackBonus = ((MaxPower - DefensivePower) * (0.2));
-            return jackBonus;
+            CharacterName = "Jack Sparrow";
+            attackBehavior = new DistrackAttack();
         }
     }
 }

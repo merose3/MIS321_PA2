@@ -10,7 +10,7 @@ namespace MIS321_PA2
     {
         public void Attack()
         {
-            System.Console.WriteLine("Look at the bird over there! *I am distracting you*");
+            System.Console.WriteLine("Look at the bird over there! *I am distracting you*\n");
         }
     }
 }

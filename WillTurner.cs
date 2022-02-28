@@ -8,14 +8,11 @@ namespace MIS321_PA2
 {
     public class WillTurner : Character //this is where you do the bonuses
     {
-        public void Attack()
+        public WillTurner() : base()
         {
-            System.Console.WriteLine("Slash! *I am sword fighting you*");
+            this.CharacterName = "WilL Turner";
+            this.attackBehavior = new DistrackAttack();
         }
-        public double WillBonus()
-        {
-            double willBonus = ((MaxPower - DefensivePower) * (0.2));
-            return willBonus;
-        }
+       
     }
 }

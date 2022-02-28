@@ -12,7 +12,7 @@ namespace MIS321_PA2
         public string UserName {get; set;}
         public string CharacterName{get;set;}
         public int MaxPower {get; set;}
-        public int Health {get; set;}
+        public double Health {get; set;}
         public int AttackStrength {get; set;}
         public int DefensivePower {get; set;}
         public IAttackBehavior attackBehavior {get; set;}
@@ -20,13 +20,16 @@ namespace MIS321_PA2
         //Character newCharacter = new Character();
         public Character()
         {
-            this.UserName = UserName;
-            this.CharacterName = CharacterName;
-            this.MaxPower = MaxPower;
-            this.Health = Health;
-            this.AttackStrength = AttackStrength;
-            this.DefensivePower = DefensivePower;
+            Random rand = new Random();
+            Health = 100;
+            MaxPower = rand.Next(1, 101);
+            AttackStrength = rand.Next(0, MaxPower);
+            DefensivePower = rand.Next(0, MaxPower);
         }
+        // public void SetAttachBehavior(IAttackBehavior attackBehavior) //behavior is private so this will help call the pitch 
+        // {
+        //     this.attackBehavior = attackBehavior;
+        // }
         public string GetUserName()
         {
             string userName = MenuOptions.GetUserName();
@@ -38,35 +41,10 @@ namespace MIS321_PA2
             string characterName = " hi";
             UserName = characterName;
             return CharacterName;
-        }
-        public int GetMaxPower()
-        {
-            Random rand = new Random();
-            MaxPower = rand.Next(1, 101);
-            return MaxPower;
-        }
-        public int GetHealth() //should I return?
-        {
-            Health = 100;
-            return Health;
-        }
-        public int GetStrength()
-        {
-            Random rand = new Random();
-            AttackStrength = rand.Next(0, MaxPower);
-
-            return AttackStrength;
-        }
-        public int GetDefensivePower()
-        {
-            Random rand = new Random();
-            DefensivePower = rand.Next(0, MaxPower);
-
-            return DefensivePower;
-        }     
+        }  
         public void GetStats()
         {
-            System.Console.WriteLine($"{UserName}/{CharacterName} Stats \nHealth: {Health} \nMax Power: {MaxPower}\nAttack Strength: {AttackStrength}\nDefensive Power: {DefensivePower}");
+            System.Console.WriteLine($"{UserName}/{CharacterName} Stats \nHealth: {Health} \nMax Power: {MaxPower}\nAttack Strength: {AttackStrength}\nDefensive Power: {DefensivePower}\n");
         }  
 
 

@@ -11,7 +11,7 @@ namespace MIS321_PA2
     {
         public void Attack()
         {
-            System.Console.WriteLine("BOOOMMMM *I blew you up*");
+            System.Console.WriteLine("BOOOMMMM *I blew you up*\n");
         }
     }
 }

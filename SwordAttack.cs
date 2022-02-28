@@ -10,7 +10,7 @@ namespace MIS321_PA2
     {
         public void Attack()
         {
-            System.Console.WriteLine("Slashhhh *I am sword fighting you*");
+            System.Console.WriteLine("Slashhhh *I am sword fighting you*\n");
         }
     }
 }
