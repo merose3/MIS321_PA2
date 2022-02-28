@@ -148,7 +148,7 @@ namespace MIS321_PA2
             System.Console.WriteLine(" ");
             player2.GetStats(); //just to check rn
             
-            while(player1.Health > 0 || player2.Health > 0)
+            while(player1.Health > 0 && player2.Health > 0) 
             {
                 if(whoFirst == 1)
                 {
