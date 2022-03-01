@@ -182,7 +182,7 @@ namespace MIS321_PA2
                 {
                     System.Console.WriteLine($"{player1.UserName} attacks first");
                     player1.attackBehavior.Attack(); //calls the player attack from the interface
-                    DamageDone(player2, player1);
+                    DamageDone(player1, player2);
                     player1.GetStats();
                     player2.GetStats();
                     System.Console.WriteLine("Please press enter once you are ready for the next round");
@@ -237,11 +237,13 @@ namespace MIS321_PA2
                 if(attacker.AttackStrength < defender.DefensivePower)
                 {
                     double damageDelt = 1;
+                    System.Console.WriteLine($"{defender.CharacterName} damage is: {damageDelt}");
                     defender.Health = (defender.Health -(damageDelt*(1.2))); //accounts for the special .2 bonus
                 }
                 else
                 {
                     double damageDelt = (attacker.AttackStrength - defender.DefensivePower)*(.2);
+                    System.Console.WriteLine($"{defender.CharacterName} damage is: {damageDelt}");
                     defender.Health = (defender.Health -(damageDelt*(1.2)));;
                 }
             }
@@ -250,11 +252,13 @@ namespace MIS321_PA2
                 if(attacker.AttackStrength < defender.DefensivePower)
                 {
                     double damageDelt = 1;
+                    System.Console.WriteLine($"{defender.CharacterName} damage is: {damageDelt}");
                     defender.Health = (defender.Health -(damageDelt*(1.2)));
                 }
                 else
                 {
-                    double damageDelt = (attacker.AttackStrength - defender.DefensivePower)*(.2);
+                    double damageDelt = (attacker.AttackStrength - defender.DefensivePower)*(1.2);
+                    System.Console.WriteLine($"{defender.CharacterName} damage is: {damageDelt}");
                     defender.Health = (defender.Health -(damageDelt*(1.2)));;
                 }
             }
@@ -263,11 +267,13 @@ namespace MIS321_PA2
                 if(attacker.AttackStrength < defender.DefensivePower)
                 {
                     double damageDelt = 1;
+                    System.Console.WriteLine($"{defender.CharacterName} damage is: {damageDelt}");
                     defender.Health = (defender.Health -(damageDelt*(1.2)));
                 }
                 else
                 {
-                    double damageDelt = (attacker.AttackStrength - defender.DefensivePower)*(.2);
+                    double damageDelt = (attacker.AttackStrength - defender.DefensivePower)*(1.2);
+                    System.Console.WriteLine($"{defender.CharacterName} damage is: {damageDelt}");
                     defender.Health = (defender.Health -(damageDelt*(1.2)));
                 }
             }
@@ -276,11 +282,13 @@ namespace MIS321_PA2
                 if(attacker.AttackStrength < defender.DefensivePower)
                 {
                     double damageDelt = 1;
+                    System.Console.WriteLine($"{defender.CharacterName} damage is: {damageDelt}");
                     defender.Health = (defender.Health -(damageDelt));
                 }
                 else
                 {
                     double damageDelt = (attacker.AttackStrength - defender.DefensivePower);
+                    System.Console.WriteLine($"{defender.CharacterName} damage is: {damageDelt}");
                     defender.Health = (defender.Health -(damageDelt));
                 }
             }
