@@ -10,7 +10,9 @@ namespace MIS321_PA2
     {
         public void Attack()
         {
+            Console. ForegroundColor = ConsoleColor. Red;
             System.Console.WriteLine("Slashhhh *I am sword fighting you*\n");
+            Console. ForegroundColor = ConsoleColor. White;
         }
     }
 }

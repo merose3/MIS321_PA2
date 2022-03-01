@@ -44,7 +44,10 @@ namespace MIS321_PA2
         }  
         public void GetStats()
         {
-            System.Console.WriteLine($"{UserName}/{CharacterName} Stats \nHealth: {Health} \nMax Power: {MaxPower}\nAttack Strength: {AttackStrength}\nDefensive Power: {DefensivePower}\n");
+            Console. ForegroundColor = ConsoleColor. Blue; //changes color to green for the sign directing user of how songs are showed
+            System.Console.WriteLine($"{UserName}/{CharacterName} Stats");
+            Console. ForegroundColor = ConsoleColor. White;
+            Console.WriteLine($"Health: {Health} \nMax Power: {MaxPower}\nAttack Strength: {AttackStrength}\nDefensive Power: {DefensivePower}\n");
         }  
 
 

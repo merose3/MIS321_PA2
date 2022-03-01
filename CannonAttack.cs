@@ -11,7 +11,9 @@ namespace MIS321_PA2
     {
         public void Attack()
         {
+            Console. ForegroundColor = ConsoleColor. Red;
             System.Console.WriteLine("BOOOMMMM *I blew you up*\n");
+            Console. ForegroundColor = ConsoleColor. White;
         }
     }
 }

@@ -10,7 +10,9 @@ namespace MIS321_PA2
     {
         public void Attack()
         {
+            Console. ForegroundColor = ConsoleColor. Red;
             System.Console.WriteLine("Look at the bird over there! *I am distracting you*\n");
+            Console. ForegroundColor = ConsoleColor. White;
         }
     }
 }
