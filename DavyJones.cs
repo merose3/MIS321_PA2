@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MIS321_PA2
 {
-    public class DavyJones : Character //this is where you do the bonuses
+    public class DavyJones : Character
     {
         public DavyJones() : base()
         {

@@ -16,37 +16,26 @@ namespace MIS321_PA2
         public int AttackStrength {get; set;}
         public int DefensivePower {get; set;}
         public IAttackBehavior attackBehavior {get; set;}
-        public IDefendBehavior defendBehavior {get;set;}
-        //Character newCharacter = new Character();
+        public IDefendBehavior defendBehavior {get;set;} //currently no functionality
         public Character()
         {
-            Random rand = new Random();
-            Health = 100;
+            Random rand = new Random(); //used for generating through all the parts of the constructor
+            Health = 100; //given
             MaxPower = rand.Next(1, 101);
-            AttackStrength = rand.Next(0, MaxPower);
-            DefensivePower = rand.Next(0, MaxPower);
+            AttackStrength = rand.Next(1, MaxPower); //strength can't be 0
+            DefensivePower = rand.Next(1, MaxPower); //power can't be 0
         }
-        // public void SetAttachBehavior(IAttackBehavior attackBehavior) //behavior is private so this will help call the pitch 
-        // {
-        //     this.attackBehavior = attackBehavior;
-        // }
         public string GetUserName()
         {
             string userName = MenuOptions.GetUserName();
             UserName = userName;
             return UserName;
         }
-        public string GetCharacterName()
-        {
-            string characterName = " hi";
-            UserName = characterName;
-            return CharacterName;
-        }  
         public void GetStats()
         {
-            Console. ForegroundColor = ConsoleColor. Blue; //changes color to green for the sign directing user of how songs are showed
+            Console. ForegroundColor = ConsoleColor. Blue; //changes color to blue
             System.Console.WriteLine($"{UserName}/{CharacterName} Stats");
-            Console. ForegroundColor = ConsoleColor. White;
+            Console. ForegroundColor = ConsoleColor. White; //changes back to white
             Console.WriteLine($"Health: {Health} \nMax Power: {MaxPower}\nAttack Strength: {AttackStrength}\nDefensive Power: {DefensivePower}\n");
         }  
 

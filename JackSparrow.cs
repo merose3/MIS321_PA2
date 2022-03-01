@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MIS321_PA2
 {
-    public class JackSparrow : Character //this is where you do the bonuses
+    public class JackSparrow : Character 
     {
         public JackSparrow() : base()
         {

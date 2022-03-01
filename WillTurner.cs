@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MIS321_PA2
 {
-    public class WillTurner : Character //this is where you do the bonuses
+    public class WillTurner : Character 
     {
         public WillTurner() : base()
         {

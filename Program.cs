@@ -11,17 +11,17 @@ namespace MIS321_PA2
         }
         static void MainMenu()
         {
-            Character player1 = new Character();
-            Character player2 = new Character();
-            int userChoice = MenuOptions.Player1Option();
-                while(userChoice != 4) //player 1 picking their character 
+            Character player1 = new Character(); //passed throughout the whole code
+            Character player2 = new Character(); //passed through all code
+            int userChoice = MenuOptions.Player1Option(); //only a write like to pick # b/w 1-5
+                while(userChoice != 5) //player 1 picking their character 
                 {
                     switch(userChoice)
                     {
                         case 1: //Jack Sparrow
-                            GetCharacterName(userChoice, player1);
-                            Player2Choice(player1, player2);
-                            userChoice = 4;
+                            GetCharacterName(userChoice, player1); //allows for the setting of the properties to the different character 
+                            Player2Choice(player1, player2); //picking for player 2
+                            userChoice = 4; //breaks you out of the while loop
                             break;
                         case 2: //Will Turner
                             GetCharacterName(userChoice, player1);
@@ -33,25 +33,30 @@ namespace MIS321_PA2
                             Player2Choice(player1, player2);
                             userChoice = 4;
                             break;
-                        }
+                        
+                        case 4:
+                            GetCharacterName(userChoice, player1);
+                            Player2Choice(player1, player2);
+                            userChoice = 4; 
+                            break;
+                    }
                     // MenuOptions.Player1OptionWrong();
                     userChoice = MenuOptions.Player1Option();
                 }
-                System.Console.WriteLine("You will now exit the system");
-                userChoice = 5;
+                System.Console.WriteLine("You will now exit the system"); //works! WHOO HOO
+                userChoice = 5; //adios bye 
         }
         static Character GetCharacterName(int userChoice, Character player1)
         {
             string playerName = player1.GetUserName();
-            Console.Clear();
+            Console.Clear(); //keeping the code clean 
 
             if(userChoice == 1)
             {
-                player1.CharacterName = "Jack Sparrow";
-                player1.attackBehavior = new DistrackAttack();
-                player1 = new JackSparrow(){UserName = playerName};
-                System.Console.WriteLine($"{playerName} chose {player1.CharacterName}");
-                // player1 = new JackSparrow(){UserName = playerName};
+                player1.CharacterName = "Jack Sparrow"; //allowing for setting of the character name 
+                player1.attackBehavior = new DistrackAttack(); //creating that new attack method specific to the character 
+                player1 = new JackSparrow(){UserName = playerName}; //setting the player name
+                System.Console.WriteLine($"{playerName} chose {player1.CharacterName}");  //writing out to the user
             }
             else if(userChoice == 2)
             {
@@ -67,13 +72,20 @@ namespace MIS321_PA2
                 player1 = new DavyJones(){UserName = playerName};
                 System.Console.WriteLine($"{playerName} chose {player1.CharacterName}");
             }
+            else if(userChoice == 4)
+            {
+                player1.CharacterName = "BlackBeard";
+                player1.attackBehavior = new FearAttack();
+                player1 = new BlackBeard(){UserName = playerName};
+                System.Console.WriteLine($"{playerName} chose {player1.CharacterName}");
+            }
             return player1;
         }
         static void Player2Choice(Character player1, Character player2)
         {
             int userChoice = MenuOptions.Player2Option(); 
             
-            while(userChoice != 4) //player 2 picking their character 
+            while(userChoice != 5) //player 2 picking their character 
             {
                 switch(userChoice)
                 {
@@ -92,7 +104,12 @@ namespace MIS321_PA2
                         GamePlay(player1, player2);
                         userChoice = 4;
                         break;
-                    case 4: 
+                    case 4://BlackBeard
+                        GetCharacterName2(userChoice,player2);
+                        GamePlay(player1, player2);
+                        userChoice = 4;
+                        break;
+                    case 5: 
                         System.Console.WriteLine("You will go back one menu option");
                         break;
                 }
@@ -125,15 +142,22 @@ namespace MIS321_PA2
                 player2 = new DavyJones(){UserName = playerName};
                 System.Console.WriteLine($"{playerName} chose {player2.CharacterName}");
             }
+            else if(userChoice == 4)
+            {
+                player2.CharacterName = "BlackBeard";
+                player2.attackBehavior = new FearAttack();
+                player2 = new BlackBeard(){UserName = playerName};
+                System.Console.WriteLine($"{playerName} chose {player2.CharacterName}");
+            }
             return player2;
         }
         static int WhoGoesFirst() //generating a number either 1 or 2
         {
-            System.Threading.Thread.Sleep(1000); 
-            MenuOptions.WhoGoesFirstStatment();
+            System.Threading.Thread.Sleep(1000);  //puts a pause in the writelines so the user can read
+            MenuOptions.WhoGoesFirstStatment(); //writeline
             System.Threading.Thread.Sleep(1000); 
             Random rand = new Random();
-            int number = rand.Next(1,3);
+            int number = rand.Next(1,3); //generating a # 1 or 2 for who will go first
             if(number == 1)
             {
                 System.Console.WriteLine("Player 1 will go first!");
@@ -148,16 +172,16 @@ namespace MIS321_PA2
         {
             int whoFirst = WhoGoesFirst();
 
-            player1.GetStats(); //just to check rn
-            System.Console.WriteLine(" ");
-            player2.GetStats(); //just to check rn
+            player1.GetStats(); //shows player 1 stats
+            System.Console.WriteLine(" "); //prettiness
+            player2.GetStats(); //shows player 2 stats
             
-            while(player1.Health > 0 && player2.Health > 0) 
+            while(player1.Health > 0 && player2.Health > 0) //makes sure that there is health to go down and that someone hasn't already died
             {
                 if(whoFirst == 1)
                 {
                     System.Console.WriteLine($"{player1.UserName} attacks first");
-                    player1.attackBehavior.Attack();
+                    player1.attackBehavior.Attack(); //calls the player attack from the interface
                     DamageDone(player2, player1);
                     player1.GetStats();
                     player2.GetStats();
@@ -167,8 +191,8 @@ namespace MIS321_PA2
                     if(player2.Health > 0) //checks to see if the other players health is below to get out of the loop for a winner/loser
                     {
                         System.Console.WriteLine($"{player2.UserName} now attacks");
-                        player2.attackBehavior.Attack();
-                        DamageDone(player2, player1); //this will switch the players 
+                        player2.attackBehavior.Attack();//calls the player attack from the interface
+                        DamageDone(player2, player1); //this will switch the players by switching the variables
                         player1.GetStats();
                         player2.GetStats();
                         System.Console.WriteLine("Please press enter once you are ready for the next round");
@@ -178,7 +202,7 @@ namespace MIS321_PA2
                 else
                 {
                     System.Console.WriteLine($"{player2.UserName} attacks first");
-                    player2.attackBehavior.Attack();
+                    player2.attackBehavior.Attack(); //calls the player attack from the interface
                     DamageDone(player2, player1);
                     player1.GetStats();
                     player2.GetStats();
@@ -187,7 +211,7 @@ namespace MIS321_PA2
                     if(player1.Health > 0)
                     {
                         System.Console.WriteLine($"{player1.UserName} now attacks");
-                        player1.attackBehavior.Attack(); 
+                        player1.attackBehavior.Attack(); //calls the player attack from the interface
                         DamageDone(player1, player2); //still switching it for me 
                         player1.GetStats();
                         player2.GetStats();
@@ -204,17 +228,16 @@ namespace MIS321_PA2
             {
                 System.Console.WriteLine($"Congrats to {player2.UserName}, you won!");
             }
-            // MainMenu();
             
         }
-        static void DamageDone(Character attacker, Character defender)
+        static void DamageDone(Character attacker, Character defender) //the math behind the scenes
         {
             if(attacker.CharacterName == "Jack Sparrow" && defender.CharacterName == "Will Turner") //special case
             {
                 if(attacker.AttackStrength < defender.DefensivePower)
                 {
                     double damageDelt = 1;
-                    defender.Health = (defender.Health -(damageDelt*(1.2)));
+                    defender.Health = (defender.Health -(damageDelt*(1.2))); //accounts for the special .2 bonus
                 }
                 else
                 {
@@ -262,13 +285,6 @@ namespace MIS321_PA2
                 }
             }
         }
-        //make a file class
-        //create a save to file method 
-        //create a list in your menu class
-        //pass in winner name 
-        //pass list into winner name 
-        //create a count 
-        //empty out scoreboard 
 
 
     }
