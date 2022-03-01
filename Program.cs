@@ -33,8 +33,8 @@ namespace MIS321_PA2
                             Player2Choice(player1, player2);
                             userChoice = 4;
                             break;
-                    }
-                    MenuOptions.Player1OptionWrong();
+                        }
+                    // MenuOptions.Player1OptionWrong();
                     userChoice = MenuOptions.Player1Option();
                 }
                 System.Console.WriteLine("You will now exit the system");
@@ -80,20 +80,23 @@ namespace MIS321_PA2
                     case 1: //Jack Sparrow
                         GetCharacterName2(userChoice, player2);
                         GamePlay(player1, player2);
-                        userChoice = 5;
+                        userChoice = 4;
                         break;
                     case 2: //Will Turner
                         GetCharacterName2(userChoice, player2);
                         GamePlay(player1, player2);
-                        userChoice = 5;
+                        userChoice = 4;
                         break;
                     case 3: //Davy Jones
                         GetCharacterName2(userChoice, player2);
                         GamePlay(player1, player2);
-                        userChoice = 5;
+                        userChoice = 4;
+                        break;
+                    case 4: 
+                        System.Console.WriteLine("You will go back one menu option");
                         break;
                 }
-                userChoice = MenuOptions.Player2Option();
+                 userChoice = MenuOptions.Player2Option();
            }
         }
         static Character GetCharacterName2(int userChoice, Character player2) //do I need two of these?

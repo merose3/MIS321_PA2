@@ -26,7 +26,7 @@ namespace MIS321_PA2
         }
         public static int Player2Option()
         {
-            System.Console.WriteLine("Player 2, please select your character by selecting a number (1-3):\n1) Jack Sparrow \n2) Will Turner \n3) Davy Jones ");
+            System.Console.WriteLine("Player 2, please select your character by selecting a number (1-3):\n1) Jack Sparrow \n2) Will Turner \n3) Davy Jones \n4) Go back one menu option");
             int userChoice = int.Parse(Console.ReadLine());
 
             return userChoice;
